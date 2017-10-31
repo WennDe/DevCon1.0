@@ -4,3 +4,23 @@ B: This is Ron Winter calling from T-Bird. Can I speak to Mr Green?
 B: Hier spricht Ron Winter von T-Bird. Kann ich Herrn Green sprechen?
 A: Let me see if he is available.
 A: Ich schaue nach, ob er zu sprechen ist.
+C: Bob Green.
+C: Hier spricht Bob Green.
+A: Hi Bob. A Ron Winter from T-Bird would like to speak you.
+A: Hallo Bob. Ein Herr Ron Winter von T-Bird möchte Sie sprechen.
+C: OK. Put him through.
+C: OK. Stell ihn durch.
+A: Mr Winter?
+A: Herr Winter. Hören Sie?
+B: Yes.
+B: Ja.
+A: I will connect you with Mr Green.
+A: Ich verbinden Sie mit Herrn Green.
+B: Thank you.
+B: Danke schön.
+C: This is Bob Green.
+C: Hier spricht Bob Green.
+B: Hello, Mr Green. This is Ron Winter from T-Bird.
+B: Hallo, Herr Green. Hier spricht Ron Winter von der Firma T-Bird.
+C: Hello, Ron. Call me Bob.
+C: Guten Tag. Sie können mich Bob nennen.

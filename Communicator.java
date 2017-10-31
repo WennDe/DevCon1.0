@@ -1,12 +1,15 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class Communicator {
 
 private String name;
-private List<String> listDialog = new ArrayList<>();
+private ArrayList<String> listDialogEN = new ArrayList<>();
+private ArrayList<String> listDialogDE = new ArrayList<>();
 
-Communicator (String txt){
+public Communicator () {
+		}
+
+public Communicator (String txt){
 	setName(txt);
 
 }
@@ -25,19 +28,31 @@ public String getName() {
 	
 }
 
-public void setDialog(String line) {
-	listDialog.add(line);
+public void setDialogEN(String line) {
+//	System.out.println(line);
+	this.listDialogEN.add(line);
 }
 
-public String communicate() {
+	public void setDialogDE(String line) {
+//		System.out.println(line);
+		this.listDialogDE.add(line);
+	}
 
 
-	return null;
+	public ArrayList<String> getDialogPartEN() {
 
+	return this.listDialogEN;
+	}
+
+	public ArrayList<String> getDialogPartDE() {
+		return this.listDialogDE;
+	}
+
+	public String getDialogENentry(int idx) {
+return this.listDialogEN.get(idx);
 }
 
-	public List<String> getDialogPart() {
-
-	return listDialog;
+	public String getDialogDEentry(int idx) {
+	return this.listDialogDE.get(idx);
 	}
 }
