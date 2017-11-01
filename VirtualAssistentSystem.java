@@ -9,25 +9,54 @@ public class VirtualAssistentSystem {
     private static Communicator personC = new Communicator("C");
     private static Communicator universal = new Communicator("");
     private static ArrayList<String> drehBuch = new ArrayList<>();
-
-    public static void main (String[] args) {
+    private static String vergleichTXT="";
+    private static boolean merke;
+    public static void main (String[] args) throws IOException {
 
         ladeDialog();
 
         int a=0;
         int b=0;
         int c=0;
+
+        InputStreamReader inputStreamReader = new InputStreamReader(System.in);
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+
+
         for (int idx=0; idx<drehBuch.size(); ++idx) {
 
-if (drehBuch.get(idx)=="A" && idx%2==0) { System.out.println(idx + ": "  + personA.getDialogENentry(a++)); }
-if (drehBuch.get(idx)=="B" && idx%2==0) { System.out.println(idx + ": "  + personB.getDialogENentry(b++)); }
-if (drehBuch.get(idx)=="C" && idx%2==0) { System.out.println(idx + ": "  + personC.getDialogENentry(c++)); }
+if (drehBuch.get(idx)=="A" && idx%2==0) { vergleichTXT = personA.getDialogENentry(a++); }
+if (drehBuch.get(idx)=="B" && idx%2==0) { vergleichTXT = personB.getDialogENentry(b++); }
+if (drehBuch.get(idx)=="C" && idx%2==0) { vergleichTXT = personC.getDialogENentry(c++); }
 
+if (idx%2==0) {
+
+    while (readInput(bufferedReader)) {
+
+
+    }
+    // System.out.println(merke);
+    if (!merke)   idx=drehBuch.size();
+}
         }
   //      System.out.println(drehBuch);
     }
 
-     public static void ladeDialog() {
+    private static boolean readInput(BufferedReader bufferedReader) throws IOException {
+
+        System.out.println( vergleichTXT + " > " );
+        String nextLine = bufferedReader.readLine();
+
+
+        if (nextLine.equals(vergleichTXT.substring(3,vergleichTXT.length()-1)) || nextLine.equals(vergleichTXT.substring(3))) {
+            System.out.println("ok"); merke=true; return false;}
+        if (nextLine.equals("exit")) { merke=false; return false;}
+
+        return true;
+    }
+
+    public static void ladeDialog() {
 
             File dialogTextFile = new File("C:/Users/EDWALTER/IdeaProjects/untitled/src/dialog.txt");
             try (BufferedReader dialogTextReader = new BufferedReader(new InputStreamReader(new FileInputStream(dialogTextFile)))) {
