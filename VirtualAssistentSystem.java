@@ -11,9 +11,11 @@ public class VirtualAssistentSystem {
     private static ArrayList<String> drehBuch = new ArrayList<>();
     private static String vergleichTXT="";
     private static boolean merke;
+
     public static void main (String[] args) throws IOException {
 
-        ladeDialog();
+        if (args.length>0) ladeDialog(args[0]);
+        else ladeDialog("dialog");
 
         int a=0;
         int b=0;
@@ -49,16 +51,16 @@ if (idx%2==0) {
         String nextLine = bufferedReader.readLine();
 
 
-        if (nextLine.equals(vergleichTXT.substring(3,vergleichTXT.length()-1)) || nextLine.equals(vergleichTXT.substring(3))) {
+        if (nextLine.equals(vergleichTXT.substring(3,vergleichTXT.length()-1)) || nextLine.equals(vergleichTXT.substring(3)) || nextLine.equals(">")) {
             System.out.println("ok"); merke=true; return false;}
         if (nextLine.equals("exit")) { merke=false; return false;}
 
         return true;
     }
 
-    public static void ladeDialog() {
+    public static void ladeDialog(String file) {
 
-            File dialogTextFile = new File("C:/Users/EDWALTER/IdeaProjects/untitled/src/dialog.txt");
+            File dialogTextFile = new File("C:/Users/EDWALTER/IdeaProjects/untitled/src/" + file + ".txt");
             try (BufferedReader dialogTextReader = new BufferedReader(new InputStreamReader(new FileInputStream(dialogTextFile)))) {
                 String line;
                 int i = 0;
