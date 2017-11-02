@@ -1,0 +1,22 @@
+C: Bonjour Monsieur.
+C: Guten Tag.
+G: Good Morning. Do you speak English?
+G: Guten Morgen. Sprechen Sie Englisch?
+C: Yes I do, can I help you?
+C: Ja, kann ich Ihnen helfen?
+G: Yes, I'd like to go to Dover. Where can I get a ticket?
+G: Ja, ich möchte nach Dover fahren. Wo kann ich ein Ticket bekommen?
+C: Well, you get the ticket at the counter over there.
+C: Sie bekommen die Tickets am Schalter dort drüben.
+G: And when is the next ferry?
+G: Und wann geht die nächste Fähre?
+C: At ten o'clock, in half an hour.
+C: Um zehn Uhr, in einer halben Stunde.
+G: And what about my car?
+G: Und was ist mit meinem Wagen?
+C: Go around this building, show your ticket, and the official can show you where to park.
+C: Fahren Sie um das Gebäude herum, zeigen Sie Ihr Ticket, und der Beamte wird Ihnen zeigen, wo Sie parken können.
+G: All right, thank you very much.
+G: In Ordnung, vielen Dank.
+C: You're welcome, have a nice trip.
+C: Gern geschehen, gute Reise.
