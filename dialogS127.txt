@@ -1,0 +1,18 @@
+A: Nystrom. Technical Support Department. This is John.
+A: Nystrom. Technikabteilung. Sie sprechen mit John.
+B: Hi John. This is Mike from CISCOM. We use your computers and I am having a problem with mine. It won't start.
+B: Hallo John. Hier spricht Mike von CISCOM. Wir haben Computer von Ihrer Firma und ich habe ein Problem mit meinem. Er fährt nicht hoch.
+A: Can you describe exactly what is happening?
+A: Können Sie genau beschreiben, was passiert?
+B: I turned my computer on, and it starts the preliminary system check but never gets beyound that. I mean, it never moves on to ask me for my password so that I can get into the application.
+B: Ich habe den Rechner eingeschaltet und er fängt mit der Systemüberprüfung an, aber er bleibt dann dort hängen. Ich meine, er kommt nicht an den Punkt, an dem ich nach dem Passwort gefragt werde. Ich komme nicht an die Anwendungen heran.
+A: That doesn't sound very good. It sounds like your operating system is damaged, or that you need a new hard drive.
+A: Das hört sich nicht gut an. Entweder ist das Betriebssystem geschädigt oder Sie brauchen eine neue Festplatte.
+B: Oh no! What about all my data?
+B: Oh nein! Was wird mit meinen Daten passieren?
+A: Are your company's data saved to a master every day?
+A: Werden die Firmendaten jeden Tag auf einen Datenträger gespeichert?
+B: Yes.
+B: Ja.
+A: Then your system administrator can retrieve them. In fact, you should ask him to save all of your data now. I will send someone over in the course of the day to look at your computer.
+A: Dann kann Ihr Systemadministrator sie retten. Eigentlich sollten Sie Ihn jetzt fragen, o er Ihre Daten speichern kann. Ich werde im Laufe des Tages jemanden vorbeischicken, er Ihren Rechner anschaut.

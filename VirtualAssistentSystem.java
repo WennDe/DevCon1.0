@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 
+
 public class VirtualAssistentSystem {
 
     private static Communicator personA = new Communicator("A");
@@ -11,13 +12,23 @@ public class VirtualAssistentSystem {
     private static ArrayList<String> drehBuch = new ArrayList<>();
     private static String vergleichTxtEn="";
     private static String vergleichTxtDe="";
+    private static String iam="A";
     private static boolean merke=true;
 
     public static void main (String[] args) throws IOException {
 
-        if (args.length>0) ladeDialog(args[0]);
-        else ladeDialog("dialog");
-
+        if (args.length>0) {
+            ladeDialog(args[0]);
+           try {
+               iam = (args[1] != null) ? (String)args[1] : "A";
+           }
+            catch (ArrayIndexOutOfBoundsException e) {
+                System.out.println(e);
+            }
+        }
+        else {
+            ladeDialog("dialog");
+             }
         int a=0;
         int b=0;
         int c=0;
@@ -25,13 +36,13 @@ public class VirtualAssistentSystem {
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
 
-
+ //       System.out.println(iam);
 
         for (int idx=0; idx<drehBuch.size(); ++idx) {
 
-if (drehBuch.get(idx)=="A" && idx%2==0) { vergleichTxtEn = personA.getDialogENentry(a); vergleichTxtDe = personA.getDialogDEentry(a++);System.out.println( vergleichTxtEn);}
-if (drehBuch.get(idx)=="B" && idx%2==0) { vergleichTxtEn = personB.getDialogENentry(b); vergleichTxtDe = personB.getDialogDEentry(b++);System.out.println( vergleichTxtEn);}
-if (drehBuch.get(idx)=="C" && idx%2==0) { vergleichTxtEn = personC.getDialogENentry(c); vergleichTxtDe = personC.getDialogDEentry(c++);while (readInput(bufferedReader)) { }}
+if (drehBuch.get(idx)=="A" && idx%2==0) { vergleichTxtEn = personA.getDialogENentry(a); vergleichTxtDe = personA.getDialogDEentry(a++);if (iam.equals("A")) {while (readInput(bufferedReader)) { }} else System.out.println( vergleichTxtEn);}
+if (drehBuch.get(idx)=="B" && idx%2==0) { vergleichTxtEn = personB.getDialogENentry(b); vergleichTxtDe = personB.getDialogDEentry(b++);if (iam.equals("B")) {while (readInput(bufferedReader)) { }} else System.out.println( vergleichTxtEn + "##");}
+if (drehBuch.get(idx)=="C" && idx%2==0) { vergleichTxtEn = personC.getDialogENentry(c); vergleichTxtDe = personC.getDialogDEentry(c++);if (iam.equals("C")) {while (readInput(bufferedReader)) { }} else System.out.println( vergleichTxtEn);}
 
 
 
@@ -39,6 +50,8 @@ if (idx%2==0) {
 //    System.out.println(merke);
     if (!merke)   idx=drehBuch.size();
 }
+
+
         }
 //        System.out.println(drehBuch);
     }

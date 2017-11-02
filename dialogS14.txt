@@ -1,0 +1,8 @@
+A: CISCOM. Good afternoon. This is Lisa. What can I do for you?
+A: Firma CISCOM. Guten Tag! Lisa am Apparat. Was kann ich für Sie tun?
+B: This is John Knox. May I speak to Karen Jones?
+B: Hier spricht John Knox. Kann ich Karen Jones sprechen?
+A: May I ask what your call is about?
+A: Darf ich den Grund Ihres Anrufs erfahren?
+B: It's personal.
+B: Es ist privat.
