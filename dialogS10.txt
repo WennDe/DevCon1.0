@@ -4,3 +4,7 @@ B: This is Susan Wood speaking. May I speak to Karen Jones?
 B: Hier spricht Susan Wood. Kann ich Karen Jones sprechen?
 A: May I ask what you are calling about?
 A: Darf ich fragen, worum es geht?
+B: I got her name from one of her clients and wanted to talk to her about the AIROM product line.
+B: Ich habe Ihren Namen von einem Ihrer Kunden bekommen und wollte mit Ihr über die Produktlinie AIROM sprechen.
+A: I'll see if she is available.
+A: Ich werden sehen, ob sie da ist.

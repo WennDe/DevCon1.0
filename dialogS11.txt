@@ -1,0 +1,14 @@
+A: CISCOM. This is Lisa. How may I help you?
+A: Firma CISCOM. Hier spricht Lisa. Wie kann ich Ihnen helfen?
+B: Can I speak to John Miles?
+B: Darf ich John Miles sprechen?
+A: May I ask who is calling?
+A: Darf ich Ihren Namen erfahren?
+B: Anne Wood from FORTRAS.
+B: Anne Wood von der Firma FORTRAS.
+A: Could you repeat the name of your company and tell me what branch you represent?
+A: Könnten Sie den Firmenname wiederholen und mir sagen, auf welchem Geschäftsgebiet Sie tätig sind?
+B: FORTRAS. We make parts for brakes. I am returning his call from this morning.
+B: FORTRAS. Wir stellen Teile für Bremsen her. Er hat mich heute Morgen um Rückruf gebeten.
+A: OK. I'll try his extension.
+A: OK. Ich schaue nach, ob er ans Telefon geht.

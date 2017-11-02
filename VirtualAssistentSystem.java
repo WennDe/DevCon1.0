@@ -9,8 +9,9 @@ public class VirtualAssistentSystem {
     private static Communicator personC = new Communicator("C");
     private static Communicator universal = new Communicator("");
     private static ArrayList<String> drehBuch = new ArrayList<>();
-    private static String vergleichTXT="";
-    private static boolean merke;
+    private static String vergleichTxtEn="";
+    private static String vergleichTxtDe="";
+    private static boolean merke=true;
 
     public static void main (String[] args) throws IOException {
 
@@ -28,32 +29,37 @@ public class VirtualAssistentSystem {
 
         for (int idx=0; idx<drehBuch.size(); ++idx) {
 
-if (drehBuch.get(idx)=="A" && idx%2==0) { vergleichTXT = personA.getDialogENentry(a++); }
-if (drehBuch.get(idx)=="B" && idx%2==0) { vergleichTXT = personB.getDialogENentry(b++); }
-if (drehBuch.get(idx)=="C" && idx%2==0) { vergleichTXT = personC.getDialogENentry(c++); }
+if (drehBuch.get(idx)=="A" && idx%2==0) { vergleichTxtEn = personA.getDialogENentry(a); vergleichTxtDe = personA.getDialogDEentry(a++);System.out.println( vergleichTxtEn);}
+if (drehBuch.get(idx)=="B" && idx%2==0) { vergleichTxtEn = personB.getDialogENentry(b); vergleichTxtDe = personB.getDialogDEentry(b++);System.out.println( vergleichTxtEn);}
+if (drehBuch.get(idx)=="C" && idx%2==0) { vergleichTxtEn = personC.getDialogENentry(c); vergleichTxtDe = personC.getDialogDEentry(c++);while (readInput(bufferedReader)) { }}
+
+
 
 if (idx%2==0) {
-
-    while (readInput(bufferedReader)) {
-
-
-    }
-    // System.out.println(merke);
+//    System.out.println(merke);
     if (!merke)   idx=drehBuch.size();
 }
         }
-  //      System.out.println(drehBuch);
+//        System.out.println(drehBuch);
     }
 
     private static boolean readInput(BufferedReader bufferedReader) throws IOException {
 
-        System.out.println( vergleichTXT + " > " );
+
         String nextLine = bufferedReader.readLine();
 
+ //       if (nextLine.equals(vergleichTxtEn.substring(3,vergleichTxtEn.length()-1)) || nextLine.equals(vergleichTxtEn.substring(3)) || nextLine.equals(">")) {
 
-        if (nextLine.equals(vergleichTXT.substring(3,vergleichTXT.length()-1)) || nextLine.equals(vergleichTXT.substring(3)) || nextLine.equals(">")) {
-            System.out.println("ok"); merke=true; return false;}
+            if (nextLine.equals(vergleichTxtEn.substring(3,vergleichTxtEn.length()-1)) || nextLine.equals(vergleichTxtEn.substring(3))) {
+            // System.out.println("ok");
+            merke=true; return false;}
         if (nextLine.equals("exit")) { merke=false; return false;}
+        if (nextLine.equals(">")) {
+            System.out.println(vergleichTxtEn); merke=true; return false;
+        }
+        if (nextLine.equals("hd")) { System.out.println(vergleichTxtDe + " > "); } // Anzeige Hilfe Deutsch
+        if (nextLine.equals("he")) { System.out.println(vergleichTxtEn + " > "); } // Anzeige Hilfe English
+
 
         return true;
     }
