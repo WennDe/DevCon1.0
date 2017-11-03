@@ -47,38 +47,55 @@ public class VirtualAssistentSystem {
 
         for (int idx=0; idx<drehBuch.size(); ++idx) {
 
-if (drehBuch.get(idx).equals("A") && idx%2==0) { vergleichTxtEn = personA.getDialogENentry(a); vergleichTxtDe = personA.getDialogDEentry(a++);if (iam.equals("A")) {while (readInput(bufferedReader)) { }} else System.out.println( vergleichTxtEn);}
-if (drehBuch.get(idx).equals("B") && idx%2==0) { vergleichTxtEn = personB.getDialogENentry(b); vergleichTxtDe = personB.getDialogDEentry(b++);if (iam.equals("B")) {while (readInput(bufferedReader)) { }} else System.out.println( vergleichTxtEn);}
-if (drehBuch.get(idx).equals("C") && idx%2==0) { vergleichTxtEn = personC.getDialogENentry(c); vergleichTxtDe = personC.getDialogDEentry(c++);if (iam.equals("C")) {while (readInput(bufferedReader)) { }} else System.out.println( vergleichTxtEn);}
+//if (drehBuch.get(idx).equals("A") && idx%2==0) { vergleichTxtEn = personA.getDialogENentry(a); vergleichTxtDe = personA.getDialogDEentry(a++);if (iam.equals("A")) {while (readInput(bufferedReader)) { }} else System.out.println( vergleichTxtEn);}
+//if (drehBuch.get(idx).equals("B") && idx%2==0) { vergleichTxtEn = personB.getDialogENentry(b); vergleichTxtDe = personB.getDialogDEentry(b++);if (iam.equals("B")) {while (readInput(bufferedReader)) { }} else System.out.println( vergleichTxtEn);}
+//if (drehBuch.get(idx).equals("C") && idx%2==0) { vergleichTxtEn = personC.getDialogENentry(c); vergleichTxtDe = personC.getDialogDEentry(c++);if (iam.equals("C")) {while (readInput(bufferedReader)) { }} else System.out.println( vergleichTxtEn + "*");}
 
 
 
 if (idx%2==0) {
 //    System.out.println(merke);
-    if (!merke)   idx=drehBuch.size();
-    System.out.println(drehBuch.get(idx));
+
+ //   System.out.println(drehBuch.get(idx));
   //  System.out.println(personenListe.get(objectMap.get(drehBuch.get(idx))).getDialogENentry(idx));
+
+        int m = objectMap.get(drehBuch.get(idx));
+    // if (personenListe.get(m).listDialogEN.size()>0) {
+        if (personenListe.get(m).getDialogENsize()>0) {
+        // System.out.println(personenListe.get(m).getDialogENentry(0));
+
+
+        vergleichTxtEn = personenListe.get(m).getDialogENentry(0);
+        vergleichTxtDe = personenListe.get(m).getDialogDEentry(0);
+
+        while (readInput(bufferedReader)) { }
+
+        if (!merke)   idx=drehBuch.size();
+        personenListe.get(m).delDialogENentry(0);
+        personenListe.get(m).delDialogDEentry(0);
+    }
+
 
 }
 
 
         }
-        System.out.println(personenListe.get(1).listDialogEN.size());
+        System.out.println(personenListe.get(0).getDialogENsize());
 
               System.out.println(drehBuch);
 //        System.out.println(personenListe);
         //       System.out.println(personenListe.get(0).getDialogENentry(0));
 //        System.out.println(personenListe.get(1).getDialogENentry(0));
         //       System.out.println(personenListe.get(0).getDialogENentry(1));
-        System.out.println(personenListe.get(0).listDialogEN);
-        System.out.println(personenListe.get(1).listDialogEN);
+//        System.out.println(personenListe.get(0).listDialogEN);
+//        System.out.println(personenListe.get(1).listDialogEN);
 
               System.out.println(objectMap);
     }
 
     private static boolean readInput(BufferedReader bufferedReader) throws IOException {
 
-
+        System.out.println(vergleichTxtEn);
         String nextLine = bufferedReader.readLine();
 
  //       if (nextLine.equals(vergleichTxtEn.substring(3,vergleichTxtEn.length()-1)) || nextLine.equals(vergleichTxtEn.substring(3)) || nextLine.equals(">")) {
@@ -106,9 +123,9 @@ if (idx%2==0) {
                 int xx =0;
                 while ((line = dialogTextReader.readLine()) != null) {
 
-                    if (line.substring(0,1).equals("A")) { universal = personA; }
-                    if (line.substring(0,1).equals("B")) { universal = personB; }
-                    if (line.substring(0,1).equals("C")) { universal = personC; }
+ //                   if (line.substring(0,1).equals("A")) { universal = personA; }
+ //                   if (line.substring(0,1).equals("B")) { universal = personB; }
+ //                   if (line.substring(0,1).equals("C")) { universal = personC; }
 
 
 
@@ -131,13 +148,14 @@ if (idx%2==0) {
    //                 System.out.println(tmp);
                     if ((i % 2) == 0) {
 //                        System.out.println(i + " " + line + "##" + line.charAt(0));
-                        universal.setDialogDE(line);
+ //                       universal.setDialogDE(line);
 
             //            System.out.println(personenListe.get(personenListe.size() - 1));
 
                         personenListe.get(tmp).setDialogDE(line);
 
-                    } else { universal.setDialogEN(line);
+                    } else {
+//                        universal.setDialogEN(line);
                       personenListe.get(tmp).setDialogEN(line);
 
                     }
