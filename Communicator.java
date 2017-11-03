@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Communicator {
 
 private String name;
-private ArrayList<String> listDialogEN = new ArrayList<>();
+ArrayList<String> listDialogEN = new ArrayList<>();
 private ArrayList<String> listDialogDE = new ArrayList<>();
 
 public Communicator () {
