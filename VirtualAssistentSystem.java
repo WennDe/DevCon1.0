@@ -79,7 +79,7 @@ if (idx%2==0) {
 
     public static void ladeDialog(String file) {
 
-            File dialogTextFile = new File("C:/Users/EDWALTER/IdeaProjects/untitled/src/" + file + ".txt");
+            File dialogTextFile = new File("C:/Users/noname/IdeaProjects/untitled/src/" + file + ".txt");
             try (BufferedReader dialogTextReader = new BufferedReader(new InputStreamReader(new FileInputStream(dialogTextFile)))) {
                 String line;
                 int i = 0;
