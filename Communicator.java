@@ -28,13 +28,14 @@ public String getName() {
 	
 }
 
+public int getDialogENsize() { return this.listDialogEN.size(); }
+public int getDialogDEsize() { return this.listDialogDE.size(); }
+
 public void setDialogEN(String line) {
-//	System.out.println(line);
 	this.listDialogEN.add(line);
 }
 
 	public void setDialogDE(String line) {
-//		System.out.println(line);
 		this.listDialogDE.add(line);
 	}
 
@@ -49,10 +50,20 @@ public void setDialogEN(String line) {
 	}
 
 	public String getDialogENentry(int idx) {
-return this.listDialogEN.get(idx);
+
+
+	return this.listDialogEN.get(idx);
 }
 
 	public String getDialogDEentry(int idx) {
 	return this.listDialogDE.get(idx);
+	}
+
+	public void delDialogENentry(int i) {
+	this.listDialogEN.remove(i);
+	}
+
+	public void delDialogDEentry(int i) {
+	this.listDialogDE.remove(i);
 	}
 }
