@@ -7,10 +7,10 @@ import java.util.Map;
 
 public class VirtualAssistentSystem {
 
-    private static Communicator personA = new Communicator("A");
-    private static Communicator personB = new Communicator("B");
-    private static Communicator personC = new Communicator("C");
-    private static Communicator universal = new Communicator("");
+//    private static Communicator personA = new Communicator("A");
+//    private static Communicator personB = new Communicator("B");
+//    private static Communicator personC = new Communicator("C");
+//    private static Communicator universal = new Communicator("");
     private static ArrayList<String> drehBuch = new ArrayList<>();
 
     private static Map<String, Integer> objectMap = new HashMap<String, Integer>();
@@ -18,7 +18,7 @@ public class VirtualAssistentSystem {
 
     private static String vergleichTxtEn="";
     private static String vergleichTxtDe="";
-    private static String iam="A";
+    private static String iam="G";
     private static boolean merke=true;
     private static List<Communicator> personenListe = new ArrayList<Communicator>();
 
@@ -94,13 +94,24 @@ if (idx%2==0) {
     }
 
     private static boolean readInput(BufferedReader bufferedReader) throws IOException {
+        // System.out.println(iam + "*" +vergleichTxtEn.substring(0,1));
 
-        System.out.println(vergleichTxtEn);
+        String[] parts = vergleichTxtEn.split(":");
+      //  System.out.println(parts[0]);
+      //  System.out.println(parts[1].trim());
+//        if (!iam.equals(vergleichTxtEn.substring(0,1))) { System.out.println(vergleichTxtEn);
+            if (!iam.equals(parts[0])) { System.out.println(vergleichTxtEn);
+
+ merke=true; return false; }
+
+
+//        System.out.println(vergleichTxtEn);
         String nextLine = bufferedReader.readLine();
 
  //       if (nextLine.equals(vergleichTxtEn.substring(3,vergleichTxtEn.length()-1)) || nextLine.equals(vergleichTxtEn.substring(3)) || nextLine.equals(">")) {
+//        if (nextLine.equals(vergleichTxtEn.substring(3,vergleichTxtEn.length()-1)) || nextLine.equals(vergleichTxtEn.substring(3))) {
 
-            if (nextLine.equals(vergleichTxtEn.substring(3,vergleichTxtEn.length()-1)) || nextLine.equals(vergleichTxtEn.substring(3))) {
+            if (nextLine.equals(parts[1].trim().substring(0,parts[1].length()-1)) || nextLine.equals(parts[1].trim())) {
             // System.out.println("ok");
             merke=true; return false;}
         if (nextLine.equals("exit")) { merke=false; return false;}
@@ -127,24 +138,28 @@ if (idx%2==0) {
  //                   if (line.substring(0,1).equals("B")) { universal = personB; }
  //                   if (line.substring(0,1).equals("C")) { universal = personC; }
 
+String[] parts = line.split(":");
 
-
-                    if (!drehBuch.contains(line.substring(0,1))) {
+//                    if (!drehBuch.contains(line.substring(0,1))) {
+                    if (!drehBuch.contains(parts[0])) {
 
              //           Communicator x = ;
-                        personenListe.add(new Communicator(line.substring(0,1)));
+//                        personenListe.add(new Communicator(line.substring(0,1)));
+                        personenListe.add(new Communicator(parts[0]));
   //                      objectMap.put(line.substring(0,1), x.toString());
-                        objectMap.put(line.substring(0,1), xx++);
+//                        objectMap.put(line.substring(0,1), xx++);
+                        objectMap.put(parts[0], xx++);
                     }
 
 
-                    drehBuch.add(line.substring(0,1));
-
+             //       drehBuch.add(line.substring(0,1));
+                    drehBuch.add(parts[0]);
 
 
 
                     ++i;
-                    int tmp = objectMap.get(line.substring(0,1));
+                    //int tmp = objectMap.get(line.substring(0,1));
+                    int tmp = objectMap.get(parts[0]);
    //                 System.out.println(tmp);
                     if ((i % 2) == 0) {
 //                        System.out.println(i + " " + line + "##" + line.charAt(0));

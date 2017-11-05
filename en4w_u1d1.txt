@@ -1,9 +1,9 @@
-C: Bonjour Monsieur.
-C: Guten Tag.
-G: Good Morning. Do you speak English?
-G: Guten Morgen. Sprechen Sie Englisch?
-C: Yes I do, can I help you?
-C: Ja, kann ich Ihnen helfen?
+Clerk: Bonjour Monsieur.
+Clerk: Guten Tag.
+George: Good Morning. Do you speak English?
+George: Guten Morgen. Sprechen Sie Englisch?
+Clerk: Yes I do, can I help you?
+Clerk: Ja, kann ich Ihnen helfen?
 G: Yes, I'd like to go to Dover. Where can I get a ticket?
 G: Ja, ich möchte nach Dover fahren. Wo kann ich ein Ticket bekommen?
 C: Well, you get the ticket at the counter over there.
