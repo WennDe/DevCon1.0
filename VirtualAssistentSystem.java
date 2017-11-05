@@ -8,7 +8,8 @@ public class VirtualAssistentSystem {
     private static Map<String, Integer> objectMap = new HashMap<String, Integer>();
     private static String vergleichTxtEn="";
     private static String vergleichTxtDe="";
-    private static String iam="G";
+    private static String iam="";
+    private static int anzahl =0;
     private static boolean merke=true;
     private static List<Communicator> personenListe = new ArrayList<Communicator>();
 
@@ -17,12 +18,6 @@ public class VirtualAssistentSystem {
 
         if (args.length>0) {
             ladeDialog(args[0]);
-           try {
-               iam = (args[1] != null) ? (String)args[1] : "A";
-           }
-            catch (ArrayIndexOutOfBoundsException e) {
-                System.out.println(e + " Fehler beim Paramter einlesen");
-            }
         }
         else {
             ladeDialog("dialog");
@@ -35,14 +30,10 @@ public class VirtualAssistentSystem {
         while (auswahlPerson(bufferedReader)) { }
 
 
-
- //      System.out.println(iam);
-
         for (int idx=0; idx<drehBuch.size(); ++idx) {
 
 
-if (idx%2==0) {
-//    System.out.println(merke);
+        if (idx%2==0) {
 
         int m = objectMap.get(drehBuch.get(idx));
         if (personenListe.get(m).getDialogENsize()>0) {
@@ -65,36 +56,30 @@ if (idx%2==0) {
 
               System.out.println(drehBuch);
               System.out.println(objectMap);
-        System.out.println(personenListe);
-        System.out.println(iam);
+
     }
 
     private static boolean auswahlPerson(BufferedReader bufferedReader) throws IOException {
         System.out.println("Wer willst Du sein? Enter a number: " + objectMap);
 
+       String nextLine = bufferedReader.readLine();
 
-
-
-
- //       System.out.println(nextLine.indexOf(0));
- //       System.out.println(Integer.parseInt(nextLine));
-        String nextLine = bufferedReader.readLine();
-
-        char character = nextLine.charAt(0);
+        char character =nextLine.charAt(0);
         int c = (int) character;
 
-        System.out.println(c);
+ //       System.out.println(c);
 
- //       if (c > 49 && c < 58) { return false; }
-        if (c>57) {return true;}
-        if (c<49) {return true;}
+ //       if (c > 497 && c < 58) { return false; }
+        if (c>47+anzahl) {return true;}
+        if (c<47) {return true;}
      //   else { return true; }
 
         if (nextLine.isEmpty()) return true;
 
         if (objectMap.containsValue(Integer.parseInt(nextLine))) {
-iam = personenListe.get(Integer.parseInt((nextLine))).getName();
+            iam = personenListe.get(Integer.parseInt((nextLine))).getName();
             System.out.println("Ok, you are: " + iam);
+            System.out.println("Enter 'he' for english help, 'hd' for german help, '>' for ... or 'exit' for exit");
             return false; }
         else { return true; }
 
@@ -105,8 +90,7 @@ iam = personenListe.get(Integer.parseInt((nextLine))).getName();
 
         String[] parts = vergleichTxtEn.split(":");
        if (!iam.equals(parts[0])) { System.out.println(vergleichTxtEn);
-
- merke=true; return false; }
+        merke=true; return false; }
 
         String nextLine = bufferedReader.readLine();
 
@@ -125,11 +109,11 @@ iam = personenListe.get(Integer.parseInt((nextLine))).getName();
 
     public static void ladeDialog(String file) {
 
-            File dialogTextFile = new File("C:/Users/EDWALTER/IdeaProjects/untitled/src/" + file + ".txt");
+            File dialogTextFile = new File("C:/Users/noname/IdeaProjects/untitled/src/" + file + ".txt");
             try (BufferedReader dialogTextReader = new BufferedReader(new InputStreamReader(new FileInputStream(dialogTextFile)))) {
                 String line;
                 int i = 0;
-                int xx =0;
+
                 while ((line = dialogTextReader.readLine()) != null) {
 
                     String[] parts = line.split(":");
@@ -137,7 +121,7 @@ iam = personenListe.get(Integer.parseInt((nextLine))).getName();
                     if (!drehBuch.contains(parts[0])) {
 
                         personenListe.add(new Communicator(parts[0]));
-                        objectMap.put(parts[0], xx++);
+                        objectMap.put(parts[0], anzahl++);
                     }
 
                     drehBuch.add(parts[0]);
@@ -159,12 +143,6 @@ iam = personenListe.get(Integer.parseInt((nextLine))).getName();
                 e.printStackTrace();
             }
 
-
-
-
         }
 
     }
-
-
-

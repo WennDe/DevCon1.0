@@ -1,0 +1,22 @@
+G: Excuse me, is that Dover?
+G: Entschuldigen Sie bitte, ist das Dover?
+J: Yes, straight ahead is the port, and on the right are the White Cliffs.
+J: Ja, geradeaus ist der Hafen und rechts sind die Weißen Klippen.
+G: Ah, I see. And Folkstone is on the left, then?
+G: Ah, ja. Und Folkstone ist dann links, ja?
+J: Yes, it is.
+J: Ja, das stimmt.
+G: Thank you.
+G: Danke.
+J: Not at all, where are you from.
+J: Keine Ursache, woher kommen Sie.
+G: I'm from Stoke on Trent, but I live in Germany now. And you?
+G: Ich komme aus Stoke on Trent, aber ich lebe jetzt in Deutschland. Und Sie?
+J: I'm from Plymouth. Whereabout's in Germany do you live?
+J: Ich bin aus Plymouth. Wo leben Sie denn in Deutschland?
+G: I live in Köln.
+G: Ich wohne in Köln.
+J: That's Cologne, right?
+J: Das ist Cologne, nicht wahr?
+G: Yes, it is.
+G: Ja, das stimmt.
