@@ -8,8 +8,8 @@ J: Yes, it is.
 J: Ja, das stimmt.
 G: Thank you.
 G: Danke.
-J: Not at all, where are you from.
-J: Keine Ursache, woher kommen Sie.
+J: Not at all, where are you from?
+J: Keine Ursache, woher kommen Sie?
 G: I'm from Stoke on Trent, but I live in Germany now. And you?
 G: Ich komme aus Stoke on Trent, aber ich lebe jetzt in Deutschland. Und Sie?
 J: I'm from Plymouth. Whereabout's in Germany do you live?

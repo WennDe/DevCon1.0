@@ -12,12 +12,14 @@ public class VirtualAssistentSystem {
     private static int anzahl =0;
     private static boolean merke=true;
     private static List<Communicator> personenListe = new ArrayList<Communicator>();
+    private static String mode="normal";
 
     public static void main (String[] args) throws IOException {
 
 
         if (args.length>0) {
             ladeDialog(args[0]);
+            if (args.length==2 && args[1].equals("-e")) { mode="easy"; }
         }
         else {
             ladeDialog("dialog");
@@ -52,15 +54,15 @@ public class VirtualAssistentSystem {
 
 
         }
-        System.out.println(personenListe.get(0).getDialogENsize());
-
-              System.out.println(drehBuch);
+//        System.out.println(personenListe.get(0).getDialogENsize());
+//              System.out.println(drehBuch);
               System.out.println(objectMap);
+        System.out.println(mode);
 
     }
 
     private static boolean auswahlPerson(BufferedReader bufferedReader) throws IOException {
-        System.out.println("Wer willst Du sein? Enter a number: " + objectMap);
+        System.out.print("Which training partner do you want to be? Choose a number: " + objectMap + " > ");
 
        String nextLine = bufferedReader.readLine();
 
@@ -69,7 +71,7 @@ public class VirtualAssistentSystem {
 
  //       System.out.println(c);
 
- //       if (c > 497 && c < 58) { return false; }
+ //       if (c > 47 && c < 58) { return false; }
         if (c>47+anzahl) {return true;}
         if (c<47) {return true;}
      //   else { return true; }
@@ -79,7 +81,7 @@ public class VirtualAssistentSystem {
         if (objectMap.containsValue(Integer.parseInt(nextLine))) {
             iam = personenListe.get(Integer.parseInt((nextLine))).getName();
             System.out.println("Ok, you are: " + iam);
-            System.out.println("Enter 'he' for english help, 'hd' for german help, '>' for ... or 'exit' for exit");
+            System.out.println("Enter 'he' for english help, 'hd' for german help, '>' for skip or 'exit' for exit");
             return false; }
         else { return true; }
 
@@ -94,6 +96,13 @@ public class VirtualAssistentSystem {
 
         String nextLine = bufferedReader.readLine();
 
+        if (nextLine.equals(parts[1].trim().substring(0,parts[1].trim().length()-1)) || nextLine.equals(parts[1].trim())) {
+            merke=true; return false;}
+
+       if (mode=="easy") {
+           nextLine = nextLine.toLowerCase();
+            parts[1] = parts[1].toLowerCase();
+       }
             if (nextLine.equals(parts[1].trim().substring(0,parts[1].trim().length()-1)) || nextLine.equals(parts[1].trim())) {
             merke=true; return false;}
         if (nextLine.equals("exit")) { merke=false; return false;}
@@ -101,7 +110,7 @@ public class VirtualAssistentSystem {
             System.out.println(vergleichTxtEn); merke=true; return false;
         }
         if (nextLine.equals("hd")) { System.out.println(vergleichTxtDe + " > "); } // Anzeige Hilfe Deutsch
-        if (nextLine.equals("he")) { System.out.println(vergleichTxtEn + " > "); } // Anzeige Hilfe English
+        if (nextLine.equals("he")) { System.out.println(vergleichTxtEn.toLowerCase() + " > "); } // Anzeige Hilfe English
 
 
         return true;
@@ -109,7 +118,7 @@ public class VirtualAssistentSystem {
 
     public static void ladeDialog(String file) {
 
-            File dialogTextFile = new File("C:/Users/noname/IdeaProjects/untitled/src/" + file + ".txt");
+            File dialogTextFile = new File("C:/Users/edwalter/IdeaProjects/untitled/src/" + file + ".txt");
             try (BufferedReader dialogTextReader = new BufferedReader(new InputStreamReader(new FileInputStream(dialogTextFile)))) {
                 String line;
                 int i = 0;
